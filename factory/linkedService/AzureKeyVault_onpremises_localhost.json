@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyVault_onpremises_localhost",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://sql-onpremises.vault.azure.net/"
+		}
+	}
+}
