@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "sale.csv",
-				"folderPath": "fact",
+				"folderPath": "Fact",
 				"container": "falck-staging"
 			},
 			"columnDelimiter": ",",
