@@ -1,0 +1,17 @@
+{
+	"name": "SqlServer_Linkedservice",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=localhost\\MSSQLSERVER01;initial catalog=WideWorldImportersDW",
+			"userName": "trafik\\rwa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3YjViZmFlYS02ZjE0LTQ2MzktODgyNi0zNzZmZTNmZjE3YmIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-sh",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
