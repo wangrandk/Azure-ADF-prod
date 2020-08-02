@@ -1,0 +1,7 @@
+{
+	"name": "copy-SQLtoStorage",
+	"properties": {
+		"concurrency": 1,
+		"annotations": []
+	}
+}
