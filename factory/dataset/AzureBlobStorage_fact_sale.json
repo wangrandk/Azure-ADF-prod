@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "sale",
+				"fileName": "sale.csv",
 				"folderPath": "fact",
 				"container": "falck-staging"
 			},
