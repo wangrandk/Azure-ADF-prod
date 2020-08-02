@@ -3,290 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copysqltostorage_fact_sale",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "SqlServerSource",
-						"queryTimeout": "02:00:00"
-					},
-					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "Sale Key",
-									"type": "Int64",
-									"physicalType": "bigint"
-								},
-								"sink": {
-									"name": "Sale Key",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "City Key",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "City Key",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Customer Key",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Customer Key",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Bill To Customer Key",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Bill To Customer Key",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Stock Item Key",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Stock Item Key",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Invoice Date Key",
-									"type": "DateTime",
-									"physicalType": "date"
-								},
-								"sink": {
-									"name": "Invoice Date Key",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "Delivery Date Key",
-									"type": "DateTime",
-									"physicalType": "date"
-								},
-								"sink": {
-									"name": "Delivery Date Key",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "Salesperson Key",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Salesperson Key",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "WWI Invoice ID",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "WWI Invoice ID",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Description",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "Description",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Package",
-									"type": "String",
-									"physicalType": "nvarchar"
-								},
-								"sink": {
-									"name": "Package",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Quantity",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Quantity",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Unit Price",
-									"type": "Decimal",
-									"physicalType": "decimal"
-								},
-								"sink": {
-									"name": "Unit Price",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "Tax Rate",
-									"type": "Decimal",
-									"physicalType": "decimal"
-								},
-								"sink": {
-									"name": "Tax Rate",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "Total Excluding Tax",
-									"type": "Decimal",
-									"physicalType": "decimal"
-								},
-								"sink": {
-									"name": "Total Excluding Tax",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "Tax Amount",
-									"type": "Decimal",
-									"physicalType": "decimal"
-								},
-								"sink": {
-									"name": "Tax Amount",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "Profit",
-									"type": "Decimal",
-									"physicalType": "decimal"
-								},
-								"sink": {
-									"name": "Profit",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "Total Including Tax",
-									"type": "Decimal",
-									"physicalType": "decimal"
-								},
-								"sink": {
-									"name": "Total Including Tax",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "Total Dry Items",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Total Dry Items",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Total Chiller Items",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Total Chiller Items",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "Lineage Key",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "Lineage Key",
-									"type": "Int32"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "SqlServer_fact_sale",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureBlobStorage_fact_sale",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "Copy_sqltostorage_dimension_customer",
 				"type": "Copy",
 				"dependsOn": [],
@@ -657,6 +373,579 @@
 				"outputs": [
 					{
 						"referenceName": "AzureSqlTable_dim_customer",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copysqltostorage_fact_sale_copy1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Sale Key",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "Sale Key",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "City Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "City Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Customer Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Customer Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Bill To Customer Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Bill To Customer Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Stock Item Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Stock Item Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Invoice Date Key",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "Invoice Date Key",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Delivery Date Key",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "Delivery Date Key",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Salesperson Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Salesperson Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "WWI Invoice ID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "WWI Invoice ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Package",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "Package",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Quantity",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Quantity",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit Price",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Unit Price",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax Rate",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Tax Rate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Excluding Tax",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Total Excluding Tax",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax Amount",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Tax Amount",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Profit",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Profit",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Including Tax",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Total Including Tax",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Dry Items",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Total Dry Items",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Chiller Items",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Total Chiller Items",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Lineage Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Lineage Key",
+									"type": "Int32"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServer_fact_sale",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureBlobStorage_fact_sale",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "CopyStoragetoAzureDB_fact_sale",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copysqltostorage_fact_sale_copy1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Sale Key",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "Sale Key",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "City Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "City Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Customer Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Customer Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Bill To Customer Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Bill To Customer Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Stock Item Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Stock Item Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Invoice Date Key",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "Invoice Date Key",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Delivery Date Key",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "Delivery Date Key",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Salesperson Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Salesperson Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "WWI Invoice ID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "WWI Invoice ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Package",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "Package",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Quantity",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Quantity",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit Price",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Unit Price",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax Rate",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Tax Rate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Excluding Tax",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Total Excluding Tax",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax Amount",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Tax Amount",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Profit",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Profit",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Including Tax",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								},
+								"sink": {
+									"name": "Total Including Tax",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Dry Items",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Total Dry Items",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Chiller Items",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Total Chiller Items",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Lineage Key",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Lineage Key",
+									"type": "Int32"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureBlobStorage_fact_sale",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable_fact_sale",
 						"type": "DatasetReference"
 					}
 				]
