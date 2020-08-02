@@ -1,0 +1,8 @@
+{
+	"name": "copy_fact_sale",
+	"properties": {
+		"description": "copy fact.sale from sql server to azure blob to azure DB",
+		"concurrency": 1,
+		"annotations": []
+	}
+}
