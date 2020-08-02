@@ -1,0 +1,8 @@
+{
+	"name": "Copy_dim_customer",
+	"properties": {
+		"description": "from sql server to azure blob to azure DB",
+		"concurrency": 1,
+		"annotations": []
+	}
+}
